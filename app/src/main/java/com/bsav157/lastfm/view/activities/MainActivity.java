@@ -1,8 +1,10 @@
-package com.bsav157.lastfm;
+package com.bsav157.lastfm.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.bsav157.lastfm.R;
 
 public class MainActivity extends AppCompatActivity {
 
