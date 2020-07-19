@@ -17,13 +17,12 @@ public class MainActivity extends AppCompatActivity implements IView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textV = findViewById(R.id.text);
         Presenter presenter = new Presenter(this);
         presenter.makeApiQuery();
     }
 
     @Override
     public void showData(String result) {
-        textV.setText(result);
+        
     }
 }
