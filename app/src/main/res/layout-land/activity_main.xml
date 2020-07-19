@@ -8,11 +8,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:paddingStart="70dp"
             android:gravity="center">
             <ImageView
                 android:layout_width="wrap_content"
@@ -21,13 +22,11 @@
             </ImageView>
         </RelativeLayout>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="8"
             android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginBottom="100dp">
-
+            android:gravity="center">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,17 +36,18 @@
             <Spinner
                 android:id="@+id/countries_list"
                 style="@style/SpinnerCountries"
-                android:elevation="@dimen/size_elevation"
                 android:background="@color/White"
-                />
+                android:elevation="@dimen/size_elevation"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/search_button"
-                android:theme="@style/RaisedButtonDark"
                 android:layout_marginTop="@dimen/margin_top_search_view"
+                android:theme="@style/RaisedButtonDark"
                 />
+
+
 
         </LinearLayout>
 

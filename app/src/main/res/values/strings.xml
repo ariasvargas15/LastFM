@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">LastFM</string>
     <string name="token">829751643419a7128b7ada50de590067</string>
+    <string name="search_view">SEE THE TOP ARTISTS!\nCHOOSE A COUNTRY</string>
+    <string name="search_button">SEARCH</string>
 </resources>
