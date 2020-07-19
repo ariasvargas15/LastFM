@@ -4,6 +4,7 @@ import com.bsav157.lastfm.interfaces.IModel;
 import com.bsav157.lastfm.interfaces.IPresenter;
 import com.bsav157.lastfm.model.data.LastFM;
 import com.bsav157.lastfm.model.io.ApiAdapter;
+import static com.bsav157.lastfm.model.utils.Defines.*;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,7 +20,7 @@ public class Interactor implements IModel, Callback<LastFM> {
 
     @Override
     public void makeApiQuery() {
-        Call<LastFM> call = ApiAdapter.getApiService().getLastFM();
+        Call<LastFM> call = ApiAdapter.getApiService().getLastFM(METHOD, COUNTRY, KEY, FORMAT);
         call.enqueue(this);
     }
 
