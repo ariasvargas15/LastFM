@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.bsav157.lastfm.R;
@@ -20,8 +20,7 @@ import java.util.ArrayList;
 public class ListActivity extends AppCompatActivity implements IView {
 
     private RecyclerView recycler;
-    private GridLayoutManager grid;
-    private ArtistAdapter adapter;
+    private TextView messageView;
     private TextView country;
 
     @Override
@@ -30,24 +29,49 @@ public class ListActivity extends AppCompatActivity implements IView {
         setContentView(R.layout.activity_list);
 
         country = findViewById(R.id.country);
+        messageView = findViewById(R.id.message);
+        recycler = findViewById(R.id.list_artists);
 
-        Presenter presenter = new Presenter(this);
-        LastFM lastFM = (LastFM) getIntent().getSerializableExtra("LastFM");
-        if(lastFM != null){
-            presenter.processData(lastFM);
-            String text = "TOP 50 " + lastFM.getTopArtists().getAttr().getCountry();
-            country.setText(text);
-        }
-
+        getMessage();
+        getCountry();
+        getTopArtists();
     }
 
     @Override
     public void showData(ArrayList<Artist> artists) {
-        recycler = findViewById(R.id.list_artists);
-        grid = new GridLayoutManager(this, 1);
+        GridLayoutManager grid = new GridLayoutManager(this, 1);
         recycler.setLayoutManager(grid);
-        adapter = new ArtistAdapter(artists);
+        ArtistAdapter adapter = new ArtistAdapter(artists);
         recycler.setAdapter(adapter);
     }
 
+    @Override
+    public void showMessage(String message) {
+        recycler.setVisibility(View.GONE);
+        messageView.setVisibility(View.VISIBLE);
+        messageView.setText(message);
+    }
+
+    private void getMessage(){
+        boolean response = getIntent().getBooleanExtra("message", false);
+        if(response){
+            showMessage("THERE IS NO DATA FOR THIS COUNTRY, TRY WITH ANOTHER");
+        }
+    }
+
+    private void getCountry(){
+        String countryName = getIntent().getStringExtra("country");
+        if (countryName != null){
+            String text = "TOP 50 " + countryName;
+            country.setText(text);
+        }
+    }
+
+    private void getTopArtists(){
+        LastFM lastFM = (LastFM) getIntent().getSerializableExtra("LastFM");
+        if(lastFM != null){
+            Presenter presenter = new Presenter(this);
+            presenter.processData(lastFM);
+        }
+    }
 }

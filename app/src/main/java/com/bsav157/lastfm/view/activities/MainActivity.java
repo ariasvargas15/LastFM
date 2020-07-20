@@ -2,6 +2,7 @@ package com.bsav157.lastfm.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -42,8 +43,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void makeQuery(String country){
-        Presenter presenter = new Presenter();
-        presenter.makeApiQuery(country, getApplicationContext());
+    private void makeQuery(final String country){
+        final ProgressDialog pd = new ProgressDialog(this);
+        pd.setMessage("Loading...");
+        pd.show();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Presenter presenter = new Presenter();
+                presenter.makeApiQuery(country, getApplicationContext(), pd);
+            }
+        }).start();
+
     }
 }

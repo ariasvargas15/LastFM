@@ -1,8 +1,8 @@
 package com.bsav157.lastfm.presenter;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
-import android.util.Log;
 
 import com.bsav157.lastfm.interfaces.IModel;
 import com.bsav157.lastfm.interfaces.IPresenter;
@@ -28,9 +28,9 @@ public class Presenter implements IPresenter {
     }
 
     @Override
-    public void makeApiQuery(String country, Context ctx) {
+    public void makeApiQuery(String country, Context ctx, ProgressDialog pd) {
         if(interactor != null){
-            interactor.makeApiQuery(country, ctx);
+            interactor.makeApiQuery(country, ctx, pd);
         }
 
     }
@@ -48,5 +48,12 @@ public class Presenter implements IPresenter {
             view.showData(artists);
         }
 
+    }
+
+    @Override
+    public void showMessage(String message) {
+        if(view != null){
+            view.showMessage(message);
+        }
     }
 }

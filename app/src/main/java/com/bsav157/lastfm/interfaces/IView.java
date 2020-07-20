@@ -6,4 +6,5 @@ import java.util.ArrayList;
 
 public interface IView {
     void showData(ArrayList<Artist> Artist);
+    void showMessage(String message);
 }
