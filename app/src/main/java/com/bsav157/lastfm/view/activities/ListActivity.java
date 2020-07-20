@@ -54,7 +54,7 @@ public class ListActivity extends AppCompatActivity implements IView {
     private void getMessage(){
         boolean response = getIntent().getBooleanExtra("message", false);
         if(response){
-            showMessage("THERE IS NO DATA FOR THIS COUNTRY, TRY WITH ANOTHER");
+            showMessage("THERE ARE NO DATA FOR THIS COUNTRY, TRY WITH ANOTHER");
         }
     }
 
