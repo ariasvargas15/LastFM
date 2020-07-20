@@ -34,8 +34,7 @@
                 android:orientation="vertical">
                 <HorizontalScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
+                    android:layout_height="match_parent">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -68,7 +67,6 @@
                                 style="@style/ArtistInfo">
                             </TextView>
                             <TextView
-                                android:maxLines="1"
                                 android:id="@+id/artist_url"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -106,7 +104,6 @@
                                 style="@style/ArtistInfo">
                             </TextView>
                             <TextView
-                                android:maxLines="1"
                                 android:id="@+id/artist_mbid"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -117,13 +114,13 @@
                 </HorizontalScrollView>
 
             </LinearLayout>
+            <ImageView
+                android:id="@+id/artist_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                />
         </LinearLayout>
-        <ImageView
-            android:id="@+id/artist_image"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

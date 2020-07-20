@@ -1,10 +1,11 @@
 package com.bsav157.lastfm.model.data;
 
+import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class TopArtists {
+public class TopArtists implements Serializable {
 
     @SerializedName("artist")
     @Expose

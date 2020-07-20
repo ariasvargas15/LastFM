@@ -27,7 +27,7 @@
         <item name="android:textSize">@dimen/artist_text_body</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/Gray</item>
-        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_width">130dp</item>
     </style>
 
     <style name="RaisedButtonDark" parent="AppTheme">
