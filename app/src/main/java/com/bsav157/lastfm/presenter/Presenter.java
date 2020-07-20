@@ -47,13 +47,5 @@ public class Presenter implements IPresenter {
         if(view != null){
             view.showData(artists);
         }
-
-    }
-
-    @Override
-    public void showMessage(String message) {
-        if(view != null){
-            view.showMessage(message);
-        }
     }
 }

@@ -12,5 +12,4 @@ public interface IPresenter {
     void makeApiQuery(String country, Context ctx, ProgressDialog pd);
     void processData(LastFM lastFM);
     void showData(ArrayList<Artist> artists);
-    void showMessage(String message);
 }

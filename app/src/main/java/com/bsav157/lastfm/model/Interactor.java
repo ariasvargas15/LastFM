@@ -71,7 +71,13 @@ public class Interactor implements IModel, Callback<LastFM> {
 
     @Override
     public void onFailure(Call<LastFM> call, Throwable t) {
-        showMessage();
+        Intent in = new Intent(myCtx, ListActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("country", country);
+        bundle.putBoolean("message", true);
+        in.putExtras(bundle);
+        myCtx.startActivity(in);
+        progressDialog.dismiss();
     }
 
     @Override
@@ -80,11 +86,5 @@ public class Interactor implements IModel, Callback<LastFM> {
             presenter.showData((ArrayList<Artist>) lastFM.getTopArtists().getArtist());
         }
 
-    }
-
-    private void showMessage() {
-        if (presenter != null) {
-            presenter.showMessage("THERE IS NO DATA FOR THIS COUNTRY, TRY WITH ANOTHER");
-        }
     }
 }

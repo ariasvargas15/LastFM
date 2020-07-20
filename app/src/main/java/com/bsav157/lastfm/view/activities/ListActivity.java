@@ -45,7 +45,6 @@ public class ListActivity extends AppCompatActivity implements IView {
         recycler.setAdapter(adapter);
     }
 
-    @Override
     public void showMessage(String message) {
         recycler.setVisibility(View.GONE);
         messageView.setVisibility(View.VISIBLE);
