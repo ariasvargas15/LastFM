@@ -76,6 +76,7 @@ public class Interactor implements IModel, Callback<LastFM> {
         bundle.putString("country", country);
         bundle.putBoolean("message", true);
         in.putExtras(bundle);
+        in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         myCtx.startActivity(in);
         progressDialog.dismiss();
     }
