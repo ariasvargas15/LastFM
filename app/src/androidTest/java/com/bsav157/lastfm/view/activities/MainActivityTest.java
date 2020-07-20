@@ -43,8 +43,8 @@ public class MainActivityTest {
 
     @Test
     public void mainActivityTest() throws InterruptedException {
-
-        for (int i = 0; i < 233; i++){
+        int period = 30;
+        for (int i = 0; i < 233; i+=period){
             ViewInteraction appCompatSpinner = onView(
                     allOf(withId(R.id.countries_list),
                             childAtPosition(
