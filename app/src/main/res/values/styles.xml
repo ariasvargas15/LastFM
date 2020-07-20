@@ -17,6 +17,19 @@
         <item name="android:textStyle">italic|bold</item>
     </style>
 
+    <style name="ArtistTitle" parent="AppTheme">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">@dimen/artist_text_title</item>
+        <item name="android:textStyle">italic|bold</item>
+    </style>
+
+    <style name="ArtistInfo" parent="AppTheme">
+        <item name="android:textSize">@dimen/artist_text_body</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/Gray</item>
+        <item name="android:layout_width">100dp</item>
+    </style>
+
     <style name="RaisedButtonDark" parent="AppTheme">
         <item name="colorButtonNormal">@color/primary_dark</item>
         <item name="colorControlHighlight">@color/primary</item>
